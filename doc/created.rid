@@ -1,4 +1,4 @@
-Fri, 13 Dec 2013 00:53:50 +0100
+Fri, 13 Dec 2013 00:58:35 +0100
 ./Guarfile	Fri, 13 Dec 2013 00:12:59 +0100
 ./LICENSE.txt~	Fri, 13 Dec 2013 00:12:59 +0100
 ./lib/prct12/matriz.rb	Fri, 13 Dec 2013 00:12:59 +0100
@@ -11,6 +11,7 @@ Fri, 13 Dec 2013 00:53:50 +0100
 ./ignore	Fri, 13 Dec 2013 00:12:59 +0100
 ./Gemfile	Fri, 13 Dec 2013 00:12:59 +0100
 ./Rakefile~	Fri, 13 Dec 2013 00:12:59 +0100
+./bin/prct12.rb	Fri, 13 Dec 2013 00:55:31 +0100
 ./Rakefile	Fri, 13 Dec 2013 00:12:59 +0100
 ./test/tc_matrizdispersa.rb	Fri, 13 Dec 2013 00:12:59 +0100
 ./test/tc_matriz_combinacion.rb	Fri, 13 Dec 2013 00:12:59 +0100
