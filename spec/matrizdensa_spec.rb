@@ -65,6 +65,7 @@ describe Prct12::MatrizDensa do
 
       (@m1*@m2).should eq(@m3)
     end
+ 
 
     it "Comparación" do
       @m3[0, 0] = 0
