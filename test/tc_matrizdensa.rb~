@@ -90,3 +90,47 @@ class Test_Matriz_Densa < Test::Unit::TestCase
         assert_equal(@m1.max,3)
 
     end
+
+    
+    #---------------------------------------------------------
+    #Fracciones
+    def test_fracciones
+      
+      #Suma
+      @m6[0, 0] = Prct12::Fraccion.new(3, 1)
+      @m6[0, 1] = Prct12::Fraccion.new(5, 2)
+      @m6[1, 0] = Prct12::Fraccion.new(3, 2)
+      @m6[1, 1] = Prct12::Fraccion.new(1, 3)
+        assert_equal(@m6, @m4+@m5)
+
+        #Resta
+      @m6[0, 0] = Prct12::Fraccion.new(-2, 1)
+      @m6[0, 1] = Prct12::Fraccion.new(-1, 2)
+      @m6[1, 0] = Prct12::Fraccion.new(3, 2)
+      @m6[1, 1] = Prct12::Fraccion.new(-1, 3)
+        assert_equal(@m6, @m4-@m5)
+
+        #Multiplicación
+      @m3[0, 0] = Prct12::Fraccion.new(5, 4)
+      @m3[0, 1] = Prct12::Fraccion.new(3, 2)
+      @m3[1, 0] = Prct12::Fraccion.new(0, 1)
+      @m3[1, 1] = Prct12::Fraccion.new(0, 1)
+        assert_equal(@m6, @m4*@m5)
+
+        #Comparación
+        @m6[0, 0] = Prct12::Fraccion.new(1, 2)
+        @m6[0, 1] = Prct12::Fraccion.new(2, 2)
+        @m6[1, 0] = Prct12::Fraccion.new(3, 2)
+        @m6[1, 1] = Prct12::Fraccion.new(1, 3)
+        assert_equal(@m6, @m4)
+
+        #Mínimo
+        assert_equal(@m4.min,Prct12::Fraccion.new(1, 3))
+
+        #Máximo
+        assert_equal(@m4.max,Prct12::Fraccion.new(3, 2))
+    end
+
+    
+    
+

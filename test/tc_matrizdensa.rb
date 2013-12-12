@@ -131,6 +131,39 @@ class Test_Matriz_Densa < Test::Unit::TestCase
         assert_equal(@m4.max,Prct12::Fraccion.new(3, 2))
     end
 
-    
+        #-----------------------------------------------------------
+    #Diferentes tipos
+    def test_combinacion
+        #Suma
+      @m6[0, 0] = Prct12::Fraccion.new(1, 2)
+      @m6[0, 1] = Prct12::Fraccion.new(2, 1)
+      @m6[1, 0] = Prct12::Fraccion.new(5, 2)
+      @m6[1, 1] = Prct12::Fraccion.new(10, 3)
+        assert_equal(@m6, @m1+@m4)
+
+        #Resta
+      @m6[0, 0] = Prct12::Fraccion.new(-1, 2)
+      @m6[0, 1] = Prct12::Fraccion.new(0, 1)
+      @m6[1, 0] = Prct12::Fraccion.new(-1, 2)
+      @m6[1, 1] = Prct12::Fraccion.new(8, 3)
+        assert_equal(@m6, @m1-@m4)
+
+        #Multiplicación
+      @m3[0, 0] = Prct12::Fraccion.new(0, 1)
+      @m3[0, 1] = Prct12::Fraccion.new(1, 1)
+      @m3[1, 0] = Prct12::Fraccion.new(3, 1)
+      @m3[1, 1] = Prct12::Fraccion.new(1, 1)
+        assert_equal(@m6, @m1*@m4)
+
+        #Comparación
+        @m6[0, 0] = Prct12::Fraccion.new(0, 1)
+        @m6[0, 1] = Prct12::Fraccion.new(1, 1)
+        @m6[1, 0] = Prct12::Fraccion.new(2, 1)
+        @m6[1, 1] = Prct12::Fraccion.new(3, 1)
+        assert_equal(@m6, @m1)
+    end
+
+end
+
     
 
