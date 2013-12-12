@@ -77,3 +77,58 @@ describe Prct12::MatrizDispersa do
       (@m1.min).should eq(0)
     end
   end
+
+  #--------------------------------------------------------------------------
+  describe "Fracciones" do
+    before :all do
+      #Inicializar
+      @m4[0, 0] = Prct12::Fraccion.new(0, 1)
+      @m4[0, 1] = Prct12::Fraccion.new(0, 1)
+      @m4[1, 0] = Prct12::Fraccion.new(3, 2)
+      @m4[1, 1] = Prct12::Fraccion.new(0, 1)
+
+      @m5[0, 0] = Prct12::Fraccion.new(0, 1)
+      @m5[0, 1] = Prct12::Fraccion.new(0, 1)
+      @m5[1, 0] = Prct12::Fraccion.new(5, 2)
+      @m5[1, 1] = Prct12::Fraccion.new(0, 1)
+    end
+    
+    it "Suma" do
+      @m6[0, 0] = Prct12::Fraccion.new(0, 1)
+      @m6[0, 1] = Prct12::Fraccion.new(0, 1)
+      @m6[1, 0] = Prct12::Fraccion.new(4, 1)
+      @m6[1, 1] = Prct12::Fraccion.new(0, 1)
+      
+      (@m4+@m5).should eq(@m6)
+    end
+    it "Resta" do
+      @m6[0, 0] = Prct12::Fraccion.new(0, 1)
+      @m6[0, 1] = Prct12::Fraccion.new(0, 1)
+      @m6[1, 0] = Prct12::Fraccion.new(-1, 1)
+      @m6[1, 1] = Prct12::Fraccion.new(0, 1)
+      
+      (@m4-@m5).should eq(@m6)
+    end
+    it "Multiplicación" do
+      @m6[0, 0] = Prct12::Fraccion.new(0, 1)
+      @m6[0, 1] = Prct12::Fraccion.new(0, 1)
+      @m6[1, 0] = Prct12::Fraccion.new(15, 2)
+      @m6[1, 1] = Prct12::Fraccion.new(0, 1)
+      
+      (@m4*@m5).should eq(@m6)
+    end
+    it "Comparación" do
+      @m6[0, 0] = Prct12::Fraccion.new(0, 1)
+      @m6[0, 1] = Prct12::Fraccion.new(0, 1)
+      @m6[1, 0] = Prct12::Fraccion.new(3, 2)
+      @m6[1, 1] = Prct12::Fraccion.new(0, 1)
+      
+      @m4.should eq(@m6)
+    end
+    it "Máximo" do
+      (@m4.max).should eq(Prct12::Fraccion.new(3, 2))
+    end
+    it "Mínimo" do
+      (@m4.min).should eq(Prct12::Fraccion.new(0, 1))
+    end
+  end
