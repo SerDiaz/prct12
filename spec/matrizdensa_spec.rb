@@ -203,7 +203,7 @@ describe Prct12::MatrizDensa do
     end
 
     it "Multiplicación" do
-      @m3[0, 0] = Prct12::Fraccion.new(0, 0)
+      @m3[0, 0] = Prct12::Fraccion.new(0, 1)
       @m3[0, 1] = Prct12::Fraccion.new(3, 2)
       @m3[1, 0] = Prct12::Fraccion.new(2, 3)
       @m3[1, 1] = Prct12::Fraccion.new(3, 1)
@@ -212,7 +212,7 @@ describe Prct12::MatrizDensa do
     end
 
     it "Comparación" do
-      @m3[0, 0] = Prct12::Fraccion.new(0, 0)
+      @m3[0, 0] = Prct12::Fraccion.new(0, 1)
       @m3[0, 1] = Prct12::Fraccion.new(2, 2)
       @m3[1, 0] = Prct12::Fraccion.new(4, 2)
       @m3[1, 1] = Prct12::Fraccion.new(3, 1)

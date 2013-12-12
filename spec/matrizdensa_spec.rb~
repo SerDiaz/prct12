@@ -165,6 +165,7 @@ describe Prct12::MatrizDensa do
   #------------------------------------------------------------------------------------------
   describe "Tipos diferentes" do
     before :all do
+      
       # Matrices 2x2
       #El resultado @m3 lo guardaremos en fraccion
       @m1 = MatrizDensaFixnum.new(2, 2)
