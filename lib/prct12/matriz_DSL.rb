@@ -74,7 +74,7 @@ class MatrizDSL
       print "\n"
     end
 
-    # Enviar a un fichero si se indica
+    # Guardar en un fichero
     if @out.include? TipoSalida::FICHERO
       File.open(@file, 'w') do |f|
         @mats.each_with_index do |x, i|
@@ -90,4 +90,110 @@ class MatrizDSL
     end
   end
 
+  
+  # Indicar operacion. Prevalecera la ultima.
+  def operacion(op)
+
+    # Si concuerda lo pasado con el array de constantes asignamos.
+    
+    TipoOperacion.constants.each do |x|
+      if(TipoOperacion.const_get(x) == op)
+        @op = op
+        return
+      end
+    end
+
+    # Valor no valido
+    raise ArgumentError, "Operacion no valida, no se encuentra en el array de constantes"
+  end
+
+  #Salida de metodos, en el caso de CONSOLA o NINGUNA no se guardara el valor.
+  #En el caso de NINGUNA invalidara el resto de opciones.
+
+  def salida(tipo_out, fichero_salida = "")
+
+    
+    if (@out.size == 1) && (@out[0] == TipoSalida::NINGUNA)
+      return
+    end
+
+    
+    TipoSalida.constants.each do |x|
+      if(TipoSalida.const_get(x) == tipo_out)
+
+        
+        if tipo_out != TipoSalida::NINGUNA
+          @out.push tipo_out
+          @out.uniq!
+
+          # se guardara
+          if tipo_out == TipoSalida::FICHERO
+            @file = fichero_salida
+          end
+
+        # Caso NINGUNA.
+        else
+          @out.clear
+          @out.push tipo_out
+        end
+        return
+      end
+    end
+
+    # error
+    raise ArgumentError, "Tipo_out no valido"
+  end
+
+  #Se recibe array de arrays y se desea operar como una matriz 
+  def operando(def_matriz)
+    if (def_matriz.is_a? Array) && (def_matriz[0].is_a? Array)
+      @mats.push crear_matriz(def_matriz)
+    else
+      raise ArgumentError, "Error, tipo introducido no valido."
+    end
+  end
+
+  
+  def to_matriz_array
+    @mats
+  end
+
+  
+  def to_m
+    calcular
+  end
+
+protected
+
+  # Creacionn de matriz a partir de array de arrays
+  def crear_matriz(mat)
+    m = @tipo.new(mat.size, mat[0].size)
+    mat.each_with_index do |x, i|
+      x.each_with_index do |y, j|
+        m[i, j] = y
+      end
+    end
+    m
+  end
+
+  # Calcula el resultado de los operandos introducidos y los devuelve como objetos de clase.
+
+  def calcular
+    if (@op != TipoOperacion::NINGUNA) && (@mats.size > 1)
+      case @op
+      when TipoOperacion::SUMA
+        return @mats.reduce(:+)
+      when TipoOperacion::RESTA
+        return @mats.reduce(:-)
+      when TipoOperacion::MULTIPLICACION
+        return @mats.reduce(:*)
+      end
+    else
+      raise RuntimeError, "Faltan datos. "
+    end
+  end
+
+end #class 
+
+end 
   
