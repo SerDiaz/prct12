@@ -132,3 +132,54 @@ describe Prct12::MatrizDispersa do
       (@m4.min).should eq(Prct12::Fraccion.new(0, 1))
     end
   end
+
+ #-----------------------------------------------------------------------------------------------------
+  describe "Tipos diferentes" do
+    before :all do
+      # Crear matrices de fracciones y enteros
+      @m1[0, 0] = 0
+      @m1[0, 1] = 0
+      @m1[1, 0] = 0
+      @m1[1, 1] = 4
+
+      @m4[0, 0] = Prct12::Fraccion.new(0, 1)
+      @m4[0, 1] = Prct12::Fraccion.new(0, 1)
+      @m4[1, 0] = Prct12::Fraccion.new(0, 1)
+      @m4[1, 1] = Prct12::Fraccion.new(3, 2)
+    end
+
+    it "Suma" do
+      @m6[0, 0] = Prct12::Fraccion.new(0, 1)
+      @m6[0, 1] = Prct12::Fraccion.new(0, 1)
+      @m6[1, 0] = Prct12::Fraccion.new(0, 1)
+      @m6[1, 1] = Prct12::Fraccion.new(11, 2)
+
+      (@m1+@m4).should eq(@m6)
+    end
+    it "Resta" do
+      @m6[0, 0] = Prct12::Fraccion.new(0, 1)
+      @m6[0, 1] = Prct12::Fraccion.new(0, 1)
+      @m6[1, 0] = Prct12::Fraccion.new(0, 1)
+      @m6[1, 1] = Prct12::Fraccion.new(5, 2)
+
+      (@m1-@m4).should eq(@m6)
+    end
+    it "Multiplicación" do
+      @m6[0, 0] = Prct12::Fraccion.new(0, 1)
+      @m6[0, 1] = Prct12::Fraccion.new(0, 1)
+      @m6[1, 0] = Prct12::Fraccion.new(0, 1)
+      @m6[1, 1] = Prct12::Fraccion.new(12, 1)
+
+      (@m1*@m4).should eq(@m6)
+    end
+    it "Comparación" do
+      @m6[0, 0] = Prct12::Fraccion.new(0, 1)
+      @m6[0, 1] = Prct12::Fraccion.new(0, 1)
+      @m6[1, 0] = Prct12::Fraccion.new(0, 1)
+      @m6[1, 1] = Prct12::Fraccion.new(4, 1)
+
+      @m1.should eq(@m6)
+    end
+
+  end
+end
