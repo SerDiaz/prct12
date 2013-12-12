@@ -1,0 +1,23 @@
+Fri, 13 Dec 2013 00:53:50 +0100
+./Guarfile	Fri, 13 Dec 2013 00:12:59 +0100
+./LICENSE.txt~	Fri, 13 Dec 2013 00:12:59 +0100
+./lib/prct12/matriz.rb	Fri, 13 Dec 2013 00:12:59 +0100
+./lib/prct12/matriz_densa.rb	Fri, 13 Dec 2013 00:37:11 +0100
+./lib/prct12/version.rb	Fri, 13 Dec 2013 00:12:59 +0100
+./lib/prct12/matriz_DSL.rb	Fri, 13 Dec 2013 00:31:14 +0100
+./lib/prct12/matriz_dispersa.rb	Fri, 13 Dec 2013 00:41:24 +0100
+./lib/prct12/fraccion.rb	Fri, 13 Dec 2013 00:12:59 +0100
+./lib/prct12.rb	Fri, 13 Dec 2013 00:12:59 +0100
+./ignore	Fri, 13 Dec 2013 00:12:59 +0100
+./Gemfile	Fri, 13 Dec 2013 00:12:59 +0100
+./Rakefile~	Fri, 13 Dec 2013 00:12:59 +0100
+./Rakefile	Fri, 13 Dec 2013 00:12:59 +0100
+./test/tc_matrizdispersa.rb	Fri, 13 Dec 2013 00:12:59 +0100
+./test/tc_matriz_combinacion.rb	Fri, 13 Dec 2013 00:12:59 +0100
+./test/tc_matrices.rb	Fri, 13 Dec 2013 00:12:59 +0100
+./test/tc_matrizdensa.rb	Fri, 13 Dec 2013 00:12:59 +0100
+./Gemfile~	Fri, 13 Dec 2013 00:12:59 +0100
+./spec/matrizdispersa_spec.rb	Fri, 13 Dec 2013 00:12:59 +0100
+./spec/matriz_spec.rb	Fri, 13 Dec 2013 00:12:59 +0100
+./spec/matrizdensa_spec.rb	Fri, 13 Dec 2013 00:48:25 +0100
+./LICENSE.txt	Fri, 13 Dec 2013 00:12:59 +0100
