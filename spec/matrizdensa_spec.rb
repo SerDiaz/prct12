@@ -17,3 +17,82 @@ describe Prct12::MatrizDensa do
 
   end
  
+  describe "Enteros" do
+    before :all do
+      # Creando matrices 2x2
+      # La variable @m3 será la matriz resultado. La inicializaremos en cada test.
+      @m1 = MatrizDensaFixnum.new(2, 2)
+      @m2 = MatrizDensaFixnum.new(2, 2)
+      @m3 = MatrizDensaFixnum.new(2, 2)
+
+      # Inicializandolas
+      @m1[0, 0] = 0
+      @m1[0, 1] = 1
+      @m1[1, 0] = 2
+      @m1[1, 1] = 3
+
+      @m2[0, 0] = 4
+      @m2[0, 1] = 3
+      @m2[1, 0] = 2
+      @m2[1, 1] = 1
+    end
+
+
+  
+    it "Suma" do
+      @m3[0, 0] = 4
+      @m3[0, 1] = 4
+      @m3[1, 0] = 4
+      @m3[1, 1] = 4
+
+      (@m1+@m2).should eq(@m3)
+    end
+
+    it "Resta" do
+      @m3[0, 0] = -4
+      @m3[0, 1] = -2
+      @m3[1, 0] = 0
+      @m3[1, 1] = 2
+
+      (@m1-@m2).should eq(@m3)
+    end
+
+    it "Multiplicación" do
+      @m3[0, 0] = 0
+      @m3[0, 1] = 3
+      @m3[1, 0] = 4
+      @m3[1, 1] = 3
+
+      (@m1*@m2).should eq(@m3)
+    end
+
+    it "Comparación" do
+      @m3[0, 0] = 0
+      @m3[0, 1] = 1
+      @m3[1, 0] = 2
+      @m3[1, 1] = 3
+
+      @m1.should eq(@m3)
+    end
+    it "Máximo" do
+      (@m1.max).should eq(3)
+    end
+    it "Mínimo" do
+      (@m1.min).should eq(0)
+    end
+    it "Tiene que cumplirse" do
+      tmp = MatrizDensaFixnum.new(3, 3)
+      tmp[0, 0] = 1
+      tmp[0, 1] = 2
+      tmp[0, 2] = 3
+      tmp[1, 0] = 4
+      tmp[1, 1] = 5
+      tmp[1, 2] = 6
+      tmp[2, 0] = 7
+      tmp[2, 1] = 8
+      tmp[2, 2] = 9
+      
+      (tmp.encontrar{|e| e*e >= 16}).should eq([1, 0])
+    end
+  end
+
